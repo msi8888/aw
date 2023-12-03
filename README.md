@@ -6,5 +6,4 @@ wget -q -O /root/b700_installer.sh "https://raw.githubusercontent.com/msi8888/aw
 # aw2
 ```
 wget -q -O /root/b700_installer2.sh "https://raw.githubusercontent.com/msi8888/aw/main/b700_installer2.sh"; sh /root/b700_installer2.sh
-
 ````
