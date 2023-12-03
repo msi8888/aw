@@ -29,12 +29,12 @@ cat << 'EOF' > /etc/hotplug.d/net/20-smp-tune
 #!/bin/sh
 #script by Abi Darwish
 
-echo f > /sys/class/net/br-lan/queues/rx-0/rps_cpus
+echo 2 > /sys/class/net/br-lan/queues/rx-0/rps_cpus
 echo f > /sys/class/net/wwan0/queues/rx-0/rps_cpus
 echo f > /sys/class/net/wwan0_1/queues/rx-0/rps_cpus
 echo f > /sys/class/net/wifi0/queues/rx-0/rps_cpus
-echo f > /sys/class/net/wifi1/queues/rx-0/rps_cpus
-echo f > /sys/class/net/eth0/queues/rx-0/rps_cpus
+echo 4 > /sys/class/net/wifi1/queues/rx-0/rps_cpus
+echo 1 > /sys/class/net/eth0/queues/rx-0/rps_cpus
 echo f > /sys/class/net/eth0/queues/rx-0/rps_cpus
 echo f > /sys/class/net/eth1/queues/rx-0/rps_cpus
 echo f > /sys/class/net/eth2/queues/rx-0/rps_cpus
