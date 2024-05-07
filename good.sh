@@ -26,9 +26,9 @@ USB3_NUMBER=$(grep usb3 /proc/interrupts | awk -F: '{print $1}' | sed 's/^ //')
 
 for i in ${INTERRUPT}; do
 	if [[ $i = ${USB3_NUMBER} ]]; then
-        	echo 8 > /proc/irq/$i/smp_affinity 2>/dev/null
+        	echo f > /proc/irq/$i/smp_affinity 2>/dev/null
         else
-        	echo 7 > /proc/irq/$i/smp_affinity 2>/dev/null
+        	echo e > /proc/irq/$i/smp_affinity 2>/dev/null
         fi
 done
 
