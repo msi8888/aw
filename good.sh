@@ -1,6 +1,4 @@
 #!/bin/sh
-#script by Abi Darwish
-
 if [[ ! -z $(which irqbalance) ]]; then
 	sed -i "s/enabled \'1\'/enabled \'0\'/" /etc/config/irqbalance
 	/etc/init.d/irqbalance stop
@@ -19,7 +17,6 @@ fi
 
 cat << 'EOF' > /etc/hotplug.d/net/20-smp-tune
 #!/bin/sh
-#script by Abi Darwish
 
 INTERRUPT=$(ls /proc/irq/ | sed '/default/d')
 USB3_NUMBER=$(grep usb3 /proc/interrupts | awk -F: '{print $1}' | sed 's/^ //')
@@ -98,10 +95,8 @@ sysctl -p -q /etc/sysctl.d/99-gaza.conf
 sed -i '/bypass700.sh/d' /etc/rc.local
 sed -i '/gro.sh/d' /etc/rc.local
 rm -rf /root/gro.sh
-rm -rf /root/bypass700.sh
 rm -rf /root/output.txt
-rm -rf /root/b700_installer.sh
-rm -rf /root/b700_installer.sh.bak
+rm -rf /root/good.sh
 echo
 echo -e "Successful..."
 echo
